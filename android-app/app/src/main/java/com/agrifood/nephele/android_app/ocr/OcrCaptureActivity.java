@@ -108,8 +108,8 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         gestureDetector = new GestureDetector(this, new CaptureGestureListener());
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
-        Snackbar.make(graphicOverlay, "Tap to Speak. Pinch/Stretch to zoom",
-                Snackbar.LENGTH_LONG)
+        Snackbar.make(graphicOverlay, "Tap to scan your document",
+                Snackbar.LENGTH_INDEFINITE)
                 .show();
 
         // Set up the Text To Speech engine.
@@ -345,9 +345,10 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         if (graphic != null) {
             text = graphic.getTextBlock();
             if (text != null && text.getValue() != null) {
-                Log.d(TAG, "text data is being spoken! " + text.getValue());
-                // Speak the string.
-                tts.speak(text.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+//                Log.d(TAG, "text data is being spoken! " + text.getValue());
+//                // Speak the string.
+//                tts.speak(text.getValue(), TextToSpeech.QUEUE_ADD, null, "DEFAULT");
+                Log.d(TAG,"I CLICKED THE SCREEN NOW SAY MY TEXT: " + text);
             }
             else {
                 Log.d(TAG, "text data is null");
